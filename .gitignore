@@ -1,0 +1,22 @@
+
+# Log file
+*.log
+
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+
+#idea intelliJ ignoring
+.idea
+
+#ignoring target
+target/
+
+#ignore maven iml files
+*.iml
