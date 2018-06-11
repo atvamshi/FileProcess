@@ -5,6 +5,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.stream.Stream;
 
 /**
@@ -25,7 +26,7 @@ public class FileUtility {
         this.inputPath = inputPath;
     }
 
-    public void readFile() throws IOException {
+    public ArrayList<String> readFile() throws IOException {
         System.out.println("Inside public void readFile() of class FileUtility ");
 
 
@@ -38,14 +39,16 @@ public class FileUtility {
             e.printStackTrace();
         }
 
-        StringBuilder data = new StringBuilder();
+        ArrayList<String> listOfLines = new ArrayList<>();
+//        StringBuilder data = new StringBuilder();
         Stream<String> lines = Files.lines(path);
         lines.forEach(line -> {
-            data.append(line).append("\n");
-            System.out.println(line);
+            listOfLines.add(line);
+//            data.append(line).append("\n");
+//            System.out.println(line);
         });
         lines.close();
-
+        return listOfLines;
     }
 }
 
